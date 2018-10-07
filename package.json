@@ -1,15 +1,27 @@
 {
   "name": "natours",
   "version": "1.0.0",
-  "description": "",
+  "description": "Natours - one page WordPress theme",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krystof84/natours.git"
   },
   "author": "Krzysztof Czajka",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krystof84/natours/issues"
+  },
+  "homepage": "https://github.com/krystof84/natours#readme",
   "devDependencies": {
-    "live-server": "^1.2.0",
-    "node-sass": "^4.9.3"
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
   }
 }
