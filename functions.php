@@ -2,6 +2,7 @@
 /*
 * Customizer
 */ 
+include_once 'incl/sanitization.php';
 include_once 'incl/customizer.php';
 
 

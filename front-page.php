@@ -3,39 +3,57 @@
     <main>
         <section class="section-about" id="section-about">
             <div class="u-center-text u-margin-bottom-big">
-                <h2 class="heading-secondary">Exciting tours for advantures people</h2>
+                <h2 class="heading-secondary">
+                    <?php echo get_theme_mod('about-heading-text', __('Exciting tours for advantures people', 'natours')); ?>
+                </h2>
             </div>
 
             <div class="row">
                     <div class="col-1-of-2">
-                        <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature</h3>
-                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim architecto ut blanditiis omnis tempore magnam, commodi necessitatibus sequi. Neque quibusdam deserunt provident accusantium repellendus vitae cumque animi eius asperiores? Molestias.</p>
+                        <?php echo get_theme_mod('about-content-text'); ?>
 
-                        <h3 class="heading-tertiary u-margin-bottom-small">Live adventures like you never have before</h3>
-                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim architecto ut blanditiis omnis tempore magnam, commodi necessitatibus sequi. Neque quibusdam deserunt provident accusantium repellendus vitae cumque animi eius asperiores? Molestias.</p>
+                        <?php if( ! get_theme_mod('about-button-hide') ): ?>
 
-                        <a href="#" class="btn-text">Learn more &rarr;</a>   
+                            <a href="<?php echo get_theme_mod('about-button-url'); ?>" class="btn-text">
+                                <?php echo get_theme_mod('about-button-text', __('Learn more', 'natours')); ?> &rarr;
+                            </a> 
+
+                        <?php endif; ?>
+
                     </div>
                     <div class="col-1-of-2">
                         <div class="composition">
 
-                            <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
-                                sizes="(max-width: 56.35em) 20vw, (max-width: 37.5em) 30vw , 300px"
-                                alt="Photo 1"
-                                class="composition__photo composition__photo--p1"
-                                src="img/nat-1-large.jpg">
+                            <!-- <pre>
+                                <?php var_dump( wp_get_attachment_url(! get_theme_mod('about-image-1')) ); ?>
+                            </pre> -->
 
-                            <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" 
-                                sizes="(max-width: 56.35em) 20vw, (max-width: 37.5em) 30vw , 300px"
-                                alt="Photo 2"
-                                class="composition__photo composition__photo--p2"
-                                src="img/nat-2-large.jpg">
+                            <?php if( get_theme_mod('about-image-1') ): ?>
+                                <img srcset="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-1'))); ?> 300w, 
+                                            <?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-1-retina'))); ?> 1000w" 
+                                    sizes="(max-width: 56.35em) 20vw, (max-width: 37.5em) 30vw , 300px"
+                                    alt="Photo 1"
+                                    class="composition__photo composition__photo--p1"
+                                    src="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-1-retina'))); ?>">
+                            <?php endif; ?>
 
-                            <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" 
-                                sizes="(max-width: 56.35em) 20vw, (max-width: 37.5em) 30vw , 300px"
-                                alt="Photo 3"
-                                class="composition__photo composition__photo--p3"
-                                src="img/nat-3-large.jpg">
+                            <?php if( get_theme_mod('about-image-2') ): ?>
+                                <img srcset="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-2'))); ?> 300w, 
+                                            <?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-2-retina'))); ?> 1000w" 
+                                    sizes="(max-width: 56.35em) 20vw, (max-width: 37.5em) 30vw , 300px"
+                                    alt="Photo 2"
+                                    class="composition__photo composition__photo--p2"
+                                    src="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-2-retina'))); ?>">
+                            <?php endif; ?>
+
+                            <?php if( get_theme_mod('about-image-3') ): ?>
+                                <img srcset="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-3'))); ?> 300w, 
+                                             <?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-3-retina'))); ?> 1000w" 
+                                    sizes="(max-width: 56.35em) 20vw, (max-width: 37.5em) 30vw , 300px"
+                                    alt="Photo 3"
+                                    class="composition__photo composition__photo--p3"
+                                    src="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-3-retina'))); ?>">
+                            <?php endif; ?>    
                         </div>
                     </div>
                 </div>
