@@ -63,40 +63,48 @@
             <div class="row">
                 <div class="col-1-of-4">
                     <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-world"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Explore the world</h3>
+                        <?php echo get_theme_mod('features-icon-1'); ?>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            <?php echo get_theme_mod('features-title-1')?>
+                        </h3>
                         <p class="feature-box__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, consectetur alias soluta vel laudantium eaque.
+                            <?php echo get_theme_mod('features-content-1'); ?>
                         </p>
                     </div>
                 </div>
 
                 <div class="col-1-of-4">
                     <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-compass"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Meet nature</h3>
+                        <?php echo get_theme_mod('features-icon-2'); ?>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            <?php echo get_theme_mod('features-title-2')?>
+                        </h3>
                         <p class="feature-box__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, consectetur alias soluta vel laudantium eaque.
+                            <?php echo get_theme_mod('features-content-2'); ?>
                         </p>
                     </div>
                 </div>
 
                 <div class="col-1-of-4">
                     <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-map"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Find your way</h3>
+                        <?php echo get_theme_mod('features-icon-3'); ?>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            <?php echo get_theme_mod('features-title-3')?>
+                        </h3>
                         <p class="feature-box__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, consectetur alias soluta vel laudantium eaque.
+                            <?php echo get_theme_mod('features-content-3'); ?>
                         </p>
                     </div>
                 </div>
 
                 <div class="col-1-of-4">
                     <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-heart"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Live a healthier live</h3>
+                        <?php echo get_theme_mod('features-icon-4'); ?>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            <?php echo get_theme_mod('features-title-4')?>
+                        </h3>
                         <p class="feature-box__text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, consectetur alias soluta vel laudantium eaque.
+                            <?php echo get_theme_mod('features-content-4'); ?>
                         </p>
                     </div>
                 </div>

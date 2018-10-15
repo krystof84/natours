@@ -17,12 +17,20 @@
         background-image: linear-gradient(to right bottom, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod( 'header-image' ))); ?>");
     }
 
-      @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 37.5em), only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125em) {
-    .header {
-        background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 214, 95, 0.8)), to(rgba(40, 180, 133, 0.8))), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('header-image-retina'))); ?>");
-        background-image: -webkit-linear-gradient(left top, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('header-image-retina'))); ?>");
-        background-image: -o-linear-gradient(left top, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('header-image-retina'))); ?>");
-        background-image: linear-gradient(to right bottom, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('header-image-retina'))); ?>"); } 
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 37.5em), only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125em) {
+        .header {
+            background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 214, 95, 0.8)), to(rgba(40, 180, 133, 0.8))), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('header-image-retina'))); ?>");
+            background-image: -webkit-linear-gradient(left top, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('header-image-retina'))); ?>");
+            background-image: -o-linear-gradient(left top, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('header-image-retina'))); ?>");
+            background-image: linear-gradient(to right bottom, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('header-image-retina'))); ?>"); 
+        } 
+    }
+
+    .section-features {
+        background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 214, 95, 0.8)), to(rgba(40, 180, 133, 0.8))), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('features-image-1'))); ?>");
+        background-image: -webkit-linear-gradient(left top, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('features-image-1'))); ?>");
+        background-image: -o-linear-gradient(left top, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('features-image-1'))); ?>");
+        background-image: linear-gradient(to right bottom, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('features-image-1'))); ?>");
     }
     
     </style>

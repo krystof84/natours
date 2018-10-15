@@ -98,26 +98,14 @@ function natours_customize_register( $wp_customize ) {
     ));
     $wp_customize->add_setting('about-button-hide', array());
 
-    $wp_customize->add_setting('about-image-1', array(
-        'transport'     => 'refresh',
-    ));
-    $wp_customize->add_setting('about-image-1-retina', array(
-        'transport'     => 'refresh',
-    ));
+    $wp_customize->add_setting('about-image-1', array());
+    $wp_customize->add_setting('about-image-1-retina', array());
 
-    $wp_customize->add_setting('about-image-2', array(
-        'transport'     => 'refresh',
-    ));
-    $wp_customize->add_setting('about-image-2-retina', array(
-        'transport'     => 'refresh',
-    ));
+    $wp_customize->add_setting('about-image-2', array());
+    $wp_customize->add_setting('about-image-2-retina', array());
 
-    $wp_customize->add_setting('about-image-3', array(
-        'transport'     => 'refresh',
-    ));
-    $wp_customize->add_setting('about-image-3-retina', array(
-        'transport'     => 'refresh',
-    ));
+    $wp_customize->add_setting('about-image-3', array());
+    $wp_customize->add_setting('about-image-3-retina', array());
 
     // About Controls
     $wp_customize->add_control('about_control_heading_text', array(
@@ -196,6 +184,132 @@ function natours_customize_register( $wp_customize ) {
         'settings' => 'about-image-3-retina',
         'mime_type' => 'image',
     ) ) );
+
+    // Features section
+    $wp_customize->add_section( 'natours_features_section' , array(
+        'title' => __( 'Features Section', 'natours' ),
+        'priority' => 105, // Before Widgets.
+    ));    
+
+    // Features settings
+    $wp_customize->add_setting('features-image-1', array());
+
+    $wp_customize->add_setting('features-icon-1', array());
+    $wp_customize->add_setting('features-title-1', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+    $wp_customize->add_setting('features-content-1', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+
+    $wp_customize->add_setting('features-icon-2', array());
+    $wp_customize->add_setting('features-title-2', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+    $wp_customize->add_setting('features-content-2', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+
+    $wp_customize->add_setting('features-icon-3', array());
+    $wp_customize->add_setting('features-title-3', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+    $wp_customize->add_setting('features-content-3', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+
+    $wp_customize->add_setting('features-icon-4', array());
+    $wp_customize->add_setting('features-title-4', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+    $wp_customize->add_setting('features-content-4', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+
+
+    // Features controls
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'image_features_control', array(
+        'label' => __( 'Background image', 'natours' ),
+        'section' => 'natours_features_section',
+        'settings' => 'features-image-1',
+        'mime_type' => 'image',
+    ) ) );
+
+    $wp_customize->add_control('feature_panel_1_icon', array(
+        'label'     => __( 'Panel 1 icon', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-icon-1'
+    ));
+    $wp_customize->add_control('feature_panel_1_title', array(
+        'label'     => __( 'Panel 1 title', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-title-1'
+    ));
+    $wp_customize->add_control('feature_panel_1_content', array(
+        'label'     => __( 'Panel 1 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-content-1'
+    ));
+
+    $wp_customize->add_control('feature_panel_2_icon', array(
+        'label'     => __( 'Panel 2 icon', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-icon-2'
+    ));
+    $wp_customize->add_control('feature_panel_2_title', array(
+        'label'     => __( 'Panel 2 title', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-title-2'
+    ));
+    $wp_customize->add_control('feature_panel_2_content', array(
+        'label'     => __( 'Panel 2 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-content-2'
+    ));
+
+    $wp_customize->add_control('feature_panel_3_icon', array(
+        'label'     => __( 'Panel 3 icon', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-icon-3'
+    ));
+    $wp_customize->add_control('feature_panel_3_title', array(
+        'label'     => __( 'Panel 3 title', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-title-3'
+    ));
+    $wp_customize->add_control('feature_panel_3_content', array(
+        'label'     => __( 'Panel 3 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-content-3'
+    ));
+
+    $wp_customize->add_control('feature_panel_4_icon', array(
+        'label'     => __( 'Panel 4 icon', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-icon-4'
+    ));
+    $wp_customize->add_control('feature_panel_4_title', array(
+        'label'     => __( 'Panel 4 title', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-title-4'
+    ));
+    $wp_customize->add_control('feature_panel_4_content', array(
+        'label'     => __( 'Panel 4 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_features_section',
+        'settings'  => 'features-content-4'
+    ));
 
 
 }
