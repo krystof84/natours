@@ -32,7 +32,28 @@
         background-image: -o-linear-gradient(left top, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('features-image-1'))); ?>");
         background-image: linear-gradient(to right bottom, rgba(126, 214, 95, 0.8), rgba(40, 180, 133, 0.8)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('features-image-1'))); ?>");
     }
-    
+
+    .card__picture--1 {
+        background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-1-image'))); ?>");
+        background-image: -webkit-linear-gradient(left top, #ffb900, #ff7730), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-1-image'))); ?>");
+        background-image: -o-linear-gradient(left top, #ffb900, #ff7730), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-1-image'))); ?>");
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-1-image'))); ?>");
+    }
+
+    .card__picture--2 {
+        background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed65f), to(#28b485)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-2-image'))); ?>");
+        background-image: -webkit-linear-gradient(left top, #7ed65f, #28b485), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-2-image'))); ?>");
+        background-image: -o-linear-gradient(left top, #7ed65f, #28b485), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-2-image'))); ?>");
+        background-image: linear-gradient(to right bottom, #7ed65f, #28b485), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-2-image'))); ?>");
+    }
+
+    .card__picture--3 {
+        background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa)), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-3-image'))); ?>");
+        background-image: -webkit-linear-gradient(left top, #2998ff, #5643fa), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-3-image'))); ?>");
+        background-image: -o-linear-gradient(left top, #2998ff, #5643fa), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-3-image'))); ?>");
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-3-image'))); ?>");
+    }
+
     </style>
     
 </head>

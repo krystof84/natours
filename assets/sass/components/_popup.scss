@@ -32,6 +32,7 @@
     &__left {
         width: 33.333333%;
         display: table-cell;
+        display: none;
 
         @include respond(tab-land) {
             display: none;

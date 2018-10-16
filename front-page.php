@@ -24,10 +24,6 @@
                     <div class="col-1-of-2">
                         <div class="composition">
 
-                            <!-- <pre>
-                                <?php var_dump( wp_get_attachment_url(! get_theme_mod('about-image-1')) ); ?>
-                            </pre> -->
-
                             <?php if( get_theme_mod('about-image-1') ): ?>
                                 <img srcset="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-1'))); ?> 300w, 
                                             <?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('about-image-1-retina'))); ?> 1000w" 
@@ -113,7 +109,9 @@
 
         <section class="section-tours" id="section-tours">
             <div class="u-center-text u-margin-bottom-big">
-                <h2 class="heading-secondary">Most popular tours</h2>
+                <h2 class="heading-secondary">
+                    <?php echo get_theme_mod('mptours-title'); ?>
+                </h2>
             </div>
 
             <div class="row">
@@ -125,26 +123,31 @@
                             </div>
                             <h4 class="card__heading">
                                 <span class="card__heading-span card__heading-span--1">
-                                    The sea explorer
+                                    <?php echo get_theme_mod('tour-1-name'); ?>
                                 </span>
                             </h4>
                             <div class="card__details">
-                                <ul>
-                                    <li>3 day tour</li>
-                                    <li>Up to 30 people</li>
-                                    <li>2 tour guides</li>
-                                    <li>Sleep in cozy hotels</li>
-                                    <li>Difficulty: easy</li>
-                                </ul>
+                                <?php echo get_theme_mod('tour-1-content'); ?>
                             </div>
                         </div>
                         <div class="card__side card__side--back card__side--back-1">
                             <div class="card__cta">
-                                <div class="card__price-box">
-                                    <p class="card__price-only">Only</p>
-                                    <p class="card__price-value">297$</p>
-                                </div>
-                                <a href="#popup" class="btn btn--white">Book now!</a>
+                                <?php if(get_theme_mod('tour-1-price')): ?>
+                                    <div class="card__price-box">
+                                        <p class="card__price-only">
+                                            <?php _e('Only', 'natours')?>
+                                        </p>
+                                        <p class="card__price-value">
+                                            <?php echo get_theme_mod('tour-1-price'); ?>
+                                        </p>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if( ! get_theme_mod('tour-1-button-hide') ): ?>
+                                    <a href="#popup-1" class="btn btn--white">
+                                        <?php echo get_theme_mod('tour-1-button-text'); ?>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -157,26 +160,27 @@
                             </div>
                             <h4 class="card__heading">
                                 <span class="card__heading-span card__heading-span--2">
-                                    The Forest Hiker
+                                     <?php echo get_theme_mod('tour-2-name'); ?>
                                 </span>
                             </h4>
                             <div class="card__details">
-                                <ul>
-                                    <li>7 day tour</li>
-                                    <li>Up to 40 people</li>
-                                    <li>6 tour guides</li>
-                                    <li>Sleep in provident tents</li>
-                                    <li>Difficulty: medium</li>
-                                </ul>
+                                <?php echo get_theme_mod('tour-2-content'); ?>
                             </div>
                         </div>
                         <div class="card__side card__side--back card__side--back-2">
                             <div class="card__cta">
                                 <div class="card__price-box">
-                                    <p class="card__price-only">Only</p>
-                                    <p class="card__price-value">497$</p>
+                                    <p class="card__price-only"><?php _e('Only', 'natours'); ?></p>
+                                    <p class="card__price-value">
+                                    <?php echo get_theme_mod('tour-2-price'); ?>
+                                    </p>
                                 </div>
-                                <a href="#popup" class="btn btn--white">Book now!</a>
+
+                                <?php if( ! get_theme_mod('tour-2-button-hide') ): ?>
+                                    <a href="#popup-2" class="btn btn--white">
+                                        <?php echo get_theme_mod('tour-2-button-text'); ?>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -189,35 +193,40 @@
                             </div>
                             <h4 class="card__heading">
                                 <span class="card__heading-span card__heading-span--3">
-                                    The snow adventurer
+                                    <?php echo get_theme_mod('tour-3-name'); ?>
                                 </span>
                             </h4>
                             <div class="card__details">
-                                <ul>
-                                    <li>5 day tour</li>
-                                    <li>Up to 15 people</li>
-                                    <li>3 tour guides</li>
-                                    <li>Sleep in provident tents</li>
-                                    <li>Difficulty: hard</li>
-                                </ul>
+                                <?php echo get_theme_mod('tour-3-content'); ?>
                             </div>
                         </div>
                         <div class="card__side card__side--back card__side--back-3">
                             <div class="card__cta">
                                 <div class="card__price-box">
-                                    <p class="card__price-only">Only</p>
-                                    <p class="card__price-value">897$</p>
+                                    <p class="card__price-only"><?php _e('Only', 'natours'); ?></p>
+                                    <p class="card__price-value">
+                                        <?php echo get_theme_mod('tour-3-price'); ?>
+                                    </p>
                                 </div>
-                                <a href="#popup" class="btn btn--white">Book now!</a>
+
+                                <?php if( ! get_theme_mod('tour-3-button-hide') ): ?>
+                                    <a href="#popup-3" class="btn btn--white">
+                                        <?php echo get_theme_mod('tour-3-button-text'); ?>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="u-center-text u-margin-top-huge">
-                <a href="#" class="btn btn--green">Discover all tours</a>
-            </div>
+            <?php if( ! get_theme_mod('mptours-button-hide') ): ?>    
+                <div class="u-center-text u-margin-top-huge">
+                    <a href="<?php echo get_theme_mod('mptours-button-url'); ?>" class="btn btn--green">
+                        <?php echo get_theme_mod('mptours-button-text'); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
         </section>
 
         <section class="section-stories" id="section-stories">
@@ -311,20 +320,76 @@
         </section>
     </main>
 
-    <div class="popup" id="popup">
-        <div class="popup__content">
-            <div class="popup__left">
-                <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img">
-                <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img">
-            </div>
-            <div class="popup__right">
-                <a href="#section-tours" class="popup__close">&times;</a>
-                <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
-                <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
-                <p class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quidem ipsa, quisquam possimus expedita dignissimos numquam autem modi praesentium quam? Iusto magnam porro obcaecati est iure debitis ratione, deleniti ducimus nesciunt, dolore accusantium dolor blanditiis architecto.</p>
-                <a href="#" class="btn btn--green">Book now</a>
+    <?php if( ! get_theme_mod('tour-1-button-hide') ): ?>
+        <div class="popup" id="popup-1">
+            <div class="popup__content">
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-small">
+                        <?php echo get_theme_mod('tour-1-popup-heading'); ?>
+                    </h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        <?php echo get_theme_mod('tour-1-popup-subheading'); ?>
+                    </h3>
+                    <p class="popup__text">
+                        <?php echo get_theme_mod('tour-1-popup-content'); ?>
+                    </p>
+                    <?php if( get_theme_mod('tour-1-popup-button-text') ): ?>
+                        <a href="<?php echo get_theme_mod('tour-1-popup-button-url'); ?>" class="btn btn--green">
+                            <?php echo get_theme_mod('tour-1-popup-button-text'); ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
+
+    <?php if( ! get_theme_mod('tour-2-button-hide') ): ?>
+        <div class="popup" id="popup-2">
+            <div class="popup__content">
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-small">
+                        <?php echo get_theme_mod('tour-2-popup-heading'); ?>
+                    </h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        <?php echo get_theme_mod('tour-2-popup-subheading'); ?>
+                    </h3>
+                    <p class="popup__text">
+                        <?php echo get_theme_mod('tour-2-popup-content'); ?>
+                    </p>
+                    <?php if( get_theme_mod('tour-2-popup-button-text') ): ?>
+                        <a href="<?php echo get_theme_mod('tour-2-popup-button-url'); ?>" class="btn btn--green">
+                            <?php echo get_theme_mod('tour-2-popup-button-text'); ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <?php if( ! get_theme_mod('tour-3-button-hide') ): ?>
+        <div class="popup" id="popup-3">
+            <div class="popup__content">
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-small">
+                        <?php echo get_theme_mod('tour-3-popup-heading'); ?>
+                    </h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        <?php echo get_theme_mod('tour-3-popup-subheading'); ?>
+                    </h3>
+                    <p class="popup__text">
+                        <?php echo get_theme_mod('tour-3-popup-content'); ?>
+                    </p>
+                    <?php if( get_theme_mod('tour-3-popup-button-text') ): ?>
+                        <a href="<?php echo get_theme_mod('tour-3-popup-button-url'); ?>" class="btn btn--green">
+                            <?php echo get_theme_mod('tour-3-popup-button-text'); ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 
 <?php get_footer(); ?>

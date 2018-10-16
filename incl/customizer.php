@@ -311,6 +311,361 @@ function natours_customize_register( $wp_customize ) {
         'settings'  => 'features-content-4'
     ));
 
+    // Most Popular Tours panel
+    $wp_customize->add_panel( 'natours_mp_tours_panel' , array(
+        'title' => __( 'Most Popular Tours Section', 'natours' ),
+        'priority' => 110, 
+    ));
+
+    // Most Popular Tours section
+    $wp_customize->add_section( 'natours_mp_tours_section_1' , array(
+        'title' => __( 'Settings', 'natours' ),
+        'panel' => 'natours_mp_tours_panel',
+        'priority' => 105, 
+    ));
+    $wp_customize->add_section( 'natours_mp_tours_section_2' , array(
+        'title' => __( 'Tour 1', 'natours' ),
+        'panel' => 'natours_mp_tours_panel',
+        'priority' => 105, 
+    ));
+    $wp_customize->add_section( 'natours_mp_tours_section_3' , array(
+        'title' => __( 'Tour 2', 'natours' ),
+        'panel' => 'natours_mp_tours_panel',
+        'priority' => 105, 
+    ));
+    $wp_customize->add_section( 'natours_mp_tours_section_4' , array(
+        'title' => __( 'Tour 3', 'natours' ),
+        'panel' => 'natours_mp_tours_panel',
+        'priority' => 105, 
+    ));
+
+    // Most Popular Tours settings
+    $wp_customize->add_setting('mptours-title', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+    $wp_customize->add_setting('mptours-button-hide', array());
+    $wp_customize->add_setting('mptours-button-text', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+    $wp_customize->add_setting('mptours-button-url', array(
+        'sanitize_callback' => 'esc_url_raw' 
+    ));
+
+
+    $wp_customize->add_setting('tour-1-image', array());
+    $wp_customize->add_setting('tour-1-name', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-1-content', array());
+    $wp_customize->add_setting('tour-1-price', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-1-button-hide', array());
+    $wp_customize->add_setting('tour-1-button-text', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-1-popup-heading', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-1-popup-subheading', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-1-popup-content', array());
+    $wp_customize->add_setting('tour-1-popup-button-text', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-1-popup-button-url', array(
+        'sanitize_callback' => 'esc_url_raw' 
+    ));
+
+
+    $wp_customize->add_setting('tour-2-image', array());
+    $wp_customize->add_setting('tour-2-name', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-2-content', array());
+    $wp_customize->add_setting('tour-2-price', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-2-button-hide', array());
+    $wp_customize->add_setting('tour-2-button-text', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-2-popup-heading', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-2-popup-subheading', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-2-popup-content', array());
+    $wp_customize->add_setting('tour-2-popup-button-text', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-2-popup-button-url', array(
+        'sanitize_callback' => 'esc_url_raw' 
+    ));
+
+
+    $wp_customize->add_setting('tour-3-image', array());
+    $wp_customize->add_setting('tour-3-name', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-3-content', array());
+    $wp_customize->add_setting('tour-3-price', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-3-button-hide', array());
+    $wp_customize->add_setting('tour-3-button-text', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-3-popup-heading', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-3-popup-subheading', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-3-popup-content', array());
+    $wp_customize->add_setting('tour-3-popup-button-text', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('tour-3-popup-button-url', array(
+        'sanitize_callback' => 'esc_url_raw' 
+    ));
+
+
+    // Most Popular Tours controls
+    $wp_customize->add_control('mp_tours_heading', array(
+        'label'     => __( 'Heading text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_1',
+        'settings'  => 'mptours-title'
+    ));
+    $wp_customize->add_control( 'mp_tours_hide_button', array(
+        'label'      => 'Hide Button',
+        'type'       => 'checkbox',
+        'section'    => 'natours_mp_tours_section_1',
+        'settings'   => 'mptours-button-hide'
+    ));
+    $wp_customize->add_control('mp_tours_text_button', array(
+        'label'     => __( 'Button text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_1',
+        'settings'  => 'mptours-button-text'
+    ));
+    $wp_customize->add_control('mp_tours_url_button', array(
+        'label'     => __( 'Button url', 'natours' ),
+        'type'      => 'url',
+        'section'   => 'natours_mp_tours_section_1',
+        'settings'  => 'mptours-button-url'
+    ));
+
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'tour_1_image_control', array(
+        'label' => __( 'Tour 1 image', 'natours' ),
+        'section' => 'natours_mp_tours_section_2',
+        'settings' => 'tour-1-image',
+        'mime_type' => 'image',
+    )));
+    $wp_customize->add_control('tour_1_name_control', array(
+        'label'     => __( 'Tour 1 name', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_2',
+        'settings'  => 'tour-1-name'
+    ));
+    $wp_customize->add_control('tour_1_content_control', array(
+        'label'     => __( 'Tour 1 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_mp_tours_section_2',
+        'settings'  => 'tour-1-content'
+    ));
+    $wp_customize->add_control('tour_1_price_control', array(
+        'label'     => __( 'Tour 1 price', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_2',
+        'settings'  => 'tour-1-price'
+    ));
+    $wp_customize->add_control( 'tour_1_hide_popup_control', array(
+        'label'      => 'Hide Popup 1',
+        'type'       => 'checkbox',
+        'section'    => 'natours_mp_tours_section_2',
+        'settings'   => 'tour-1-button-hide'
+    ));
+    $wp_customize->add_control('tour_1_button_control', array(
+        'label'     => __( 'Button text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_2',
+        'settings'  => 'tour-1-button-text'
+    ));
+    $wp_customize->add_control('tour_1_popup_heading_control', array(
+        'label'     => __( 'Popup 1 heading', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_2',
+        'settings'  => 'tour-1-popup-heading'
+    ));
+    $wp_customize->add_control('tour_1_popup_subheading_control', array(
+        'label'     => __( 'Popup 1 subheading', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_2',
+        'settings'  => 'tour-1-popup-subheading'
+    ));
+    $wp_customize->add_control('tour_1_popup_content_control', array(
+        'label'     => __( 'Popup 1 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_mp_tours_section_2',
+        'settings'  => 'tour-1-popup-content'
+    ));
+    $wp_customize->add_control('tour_1_popup_button_text', array(
+        'label'     => __( 'Popup 1 button text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_2',
+        'settings'  => 'tour-1-popup-button-text'
+    ));
+    $wp_customize->add_control('tour_1_popup_button_url', array(
+        'label'     => __( 'Popup 1 button url', 'natours' ),
+        'type'      => 'url',
+        'section'   => 'natours_mp_tours_section_2',
+        'settings'  => 'tour-1-popup-button-url'
+    ));
+
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'tour_2_image_control', array(
+        'label' => __( 'Tour 2 image', 'natours' ),
+        'section' => 'natours_mp_tours_section_3',
+        'settings' => 'tour-2-image',
+        'mime_type' => 'image',
+    )));
+    $wp_customize->add_control('tour_2_name_control', array(
+        'label'     => __( 'Tour 2 name', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_3',
+        'settings'  => 'tour-2-name'
+    ));
+    $wp_customize->add_control('tour_2_content_control', array(
+        'label'     => __( 'Tour 2 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_mp_tours_section_3',
+        'settings'  => 'tour-2-content'
+    ));
+    $wp_customize->add_control('tour_2_price_control', array(
+        'label'     => __( 'Tour 2 price', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_3',
+        'settings'  => 'tour-2-price'
+    ));
+    $wp_customize->add_control( 'tour_2_hide_popup_control', array(
+        'label'      => 'Hide Popup 2',
+        'type'       => 'checkbox',
+        'section'    => 'natours_mp_tours_section_3',
+        'settings'   => 'tour-2-button-hide'
+    ));
+    $wp_customize->add_control('tour_2_button_control', array(
+        'label'     => __( 'Button text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_3',
+        'settings'  => 'tour-2-button-text'
+    ));
+    $wp_customize->add_control('tour_2_popup_heading_control', array(
+        'label'     => __( 'Popup 2 heading', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_3',
+        'settings'  => 'tour-2-popup-heading'
+    ));
+    $wp_customize->add_control('tour_2_popup_subheading_control', array(
+        'label'     => __( 'Popup 2 subheading', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_3',
+        'settings'  => 'tour-2-popup-subheading'
+    ));
+    $wp_customize->add_control('tour_2_popup_content_control', array(
+        'label'     => __( 'Popup 2 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_mp_tours_section_3',
+        'settings'  => 'tour-2-popup-content'
+    ));
+    $wp_customize->add_control('tour_2_popup_button_text', array(
+        'label'     => __( 'Popup 2 button text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_3',
+        'settings'  => 'tour-2-popup-button-text'
+    ));
+    $wp_customize->add_control('tour_2_popup_button_url', array(
+        'label'     => __( 'Popup 2 button url', 'natours' ),
+        'type'      => 'url',
+        'section'   => 'natours_mp_tours_section_3',
+        'settings'  => 'tour-2-popup-button-url'
+    ));
+
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'tour_3_image_control', array(
+        'label' => __( 'Tour 3 image', 'natours' ),
+        'section' => 'natours_mp_tours_section_4',
+        'settings' => 'tour-3-image',
+        'mime_type' => 'image',
+    )));
+    $wp_customize->add_control('tour_3_name_control', array(
+        'label'     => __( 'Tour 3 name', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_4',
+        'settings'  => 'tour-3-name'
+    ));
+    $wp_customize->add_control('tour_3_content_control', array(
+        'label'     => __( 'Tour 3 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_mp_tours_section_4',
+        'settings'  => 'tour-3-content'
+    ));
+    $wp_customize->add_control('tour_3_price_control', array(
+        'label'     => __( 'Tour 3 price', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_4',
+        'settings'  => 'tour-3-price'
+    ));
+    $wp_customize->add_control( 'tour_3_hide_popup_control', array(
+        'label'      => 'Hide Popup 3',
+        'type'       => 'checkbox',
+        'section'    => 'natours_mp_tours_section_4',
+        'settings'   => 'tour-3-button-hide'
+    ));
+    $wp_customize->add_control('tour_3_button_control', array(
+        'label'     => __( 'Button text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_4',
+        'settings'  => 'tour-3-button-text'
+    ));
+    $wp_customize->add_control('tour_3_popup_heading_control', array(
+        'label'     => __( 'Popup 3 heading', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_4',
+        'settings'  => 'tour-3-popup-heading'
+    ));
+    $wp_customize->add_control('tour_3_popup_subheading_control', array(
+        'label'     => __( 'Popup 3 subheading', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_4',
+        'settings'  => 'tour-3-popup-subheading'
+    ));
+    $wp_customize->add_control('tour_3_popup_content_control', array(
+        'label'     => __( 'Popup 3 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_mp_tours_section_4',
+        'settings'  => 'tour-3-popup-content'
+    ));
+    $wp_customize->add_control('tour_3_popup_button_text', array(
+        'label'     => __( 'Popup 3 button text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_mp_tours_section_4',
+        'settings'  => 'tour-3-popup-button-text'
+    ));
+    $wp_customize->add_control('tour_3_popup_button_url', array(
+        'label'     => __( 'Popup 3 button url', 'natours' ),
+        'type'      => 'url',
+        'section'   => 'natours_mp_tours_section_4',
+        'settings'  => 'tour-3-popup-button-url'
+    ));
+
+
+
+
 
 }
 add_action( 'customize_register', 'natours_customize_register' );
