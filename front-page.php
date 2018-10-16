@@ -230,27 +230,35 @@
         </section>
 
         <section class="section-stories" id="section-stories">
-            <div class="bg-video">
-                <video class="bg-video__content" autoplay muted loop>
-                    <source src="img/video.mp4" type="video/mp4">
-                    <source src="img/video.webm" type="video/webm">   
-                    Your browser is not supported      
-                </video>
-            </div>
+            <?php if(get_theme_mod('story-video-1')): ?>
+                <div class="bg-video">
+                    <video class="bg-video__content" autoplay muted loop>
+                        <source src="<?php echo wp_get_attachment_url(get_theme_mod('story-video-1')); ?>" type="video/mp4">
+                        <source src="<?php echo wp_get_attachment_url(get_theme_mod('story-video-2')); ?>" type="video/webm">   
+                        Your browser is not supported      
+                    </video>
+                </div>
+            <?php endif; ?>
 
             <div class="u-center-text u-margin-bottom-big">
-                <h2 class="heading-secondary">We make people genuinely happy</h2>
+                <h2 class="heading-secondary">
+                    <?php echo get_theme_mod('story-heading'); ?>
+                </h2>
             </div>
 
             <div class="row">
                 <div class="story">
                     <figure class="story__shape">
-                        <img src="img/nat-8.jpg" alt="Person on a tour" class="story__img">
-                        <figcaption class="story__caption">Marry Smith</figcaption> 
+                        <img src="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('story-1-image'))); ?>" alt="Person on a tour" class="story__img">
+                        <figcaption class="story__caption">
+                            <?php echo get_post(get_theme_mod('story-1-image'))->post_excerpt;; ?>
+                        </figcaption> 
                     </figure>
                     <div class="story__text">
-                        <h3 class="heading-tertiary u-margin-bottom-small">I had the best week ever with my family</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, sunt officia laborum consequuntur vero voluptatum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero ex ut quidem laudantium consectetur tempore aperiam expedita provident sint voluptate!</p>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            <?php echo get_theme_mod('story-1-title'); ?>
+                        </h3>
+                        <p><?php echo get_theme_mod('story-1-content'); ?></p>
                     </div>
                 </div>
             </div>
@@ -258,19 +266,20 @@
             <div class="row">
                 <div class="story">
                     <figure class="story__shape">
-                        <img src="img/nat-9.jpg" alt="Person on a tour" class="story__img">
-                        <figcaption class="story__caption">Jack Wilson</figcaption> 
+                        <img src="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('story-2-image'))); ?>" alt="Person on a tour" class="story__img">
+                        <figcaption class="story__caption">
+                            <?php echo get_post(get_theme_mod('story-2-image'))->post_excerpt;; ?>
+                        </figcaption> 
                     </figure>
                     <div class="story__text">
-                        <h3 class="heading-tertiary u-margin-bottom-small">Wow! Mt live is completely different now</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, sunt officia laborum consequuntur vero voluptatum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero ex ut quidem laudantium consectetur tempore aperiam expedita provident sint voluptate!</p>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            <?php echo get_theme_mod('story-2-title'); ?>
+                        </h3>
+                        <p><?php echo get_theme_mod('story-2-content'); ?></p>
                     </div>
                 </div>
             </div>
 
-            <div class="u-center-text u-margin-top-huge">
-                <a href="#" class="btn-text">Read all stories &rarr;</a>
-            </div>
         </section>
 
         <section class="section-book" id="section-book">

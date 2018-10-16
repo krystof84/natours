@@ -663,6 +663,92 @@ function natours_customize_register( $wp_customize ) {
         'settings'  => 'tour-3-popup-button-url'
     ));
 
+    // Stories Section
+    $wp_customize->add_section( 'natours_stories_section' , array(
+        'title' => __( 'Stories Section', 'natours' ),
+        'priority' => 110, 
+    ));
+
+    // Stories settings
+    $wp_customize->add_setting('story-video-1', array());
+    $wp_customize->add_setting('story-video-2', array());
+    $wp_customize->add_setting('story-heading', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('story-1-image', array());
+    $wp_customize->add_setting('story-1-title', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('story-1-content', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('story-2-image', array());
+    $wp_customize->add_setting('story-2-title', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+    $wp_customize->add_setting('story-2-content', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses' 
+    ));
+
+    // Stories controls
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'story_video_1_control', array(
+        'label' => __( 'Background Video (mp4 format)', 'natours' ),
+        'section' => 'natours_stories_section',
+        'settings' => 'story-video-1',
+        'mime_type' => 'video',
+    )));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'story_video_2_control', array(
+        'label' => __( 'Background Video (webm format)', 'natours' ),
+        'section' => 'natours_stories_section',
+        'settings' => 'story-video-2',
+        'mime_type' => 'video',
+    )));
+
+    $wp_customize->add_control('story_heading_control', array(
+        'label'     => __( 'Stories section heading text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_stories_section',
+        'settings'  => 'story-heading'
+    ));
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'story_1_image_control', array(
+        'label' => __( 'Story 1 image', 'natours' ),
+        'section' => 'natours_stories_section',
+        'settings' => 'story-1-image',
+        'mime_type' => 'image',
+    )));
+    $wp_customize->add_control('story_1_title_control', array(
+        'label'     => __( 'Story 1 title', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_stories_section',
+        'settings'  => 'story-1-title'
+    ));
+    $wp_customize->add_control('story_1_content_control', array(
+        'label'     => __( 'Story 1 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_stories_section',
+        'settings'  => 'story-1-content'
+    ));
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'story_2_image_control', array(
+        'label' => __( 'Story 2 image', 'natours' ),
+        'section' => 'natours_stories_section',
+        'settings' => 'story-2-image',
+        'mime_type' => 'image',
+    )));
+    $wp_customize->add_control('story_2_title_control', array(
+        'label'     => __( 'Story 2 title', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_stories_section',
+        'settings'  => 'story-2-title'
+    ));
+    $wp_customize->add_control('story_2_content_control', array(
+        'label'     => __( 'Story 2 content', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_stories_section',
+        'settings'  => 'story-2-content'
+    ));
+
 
 
 
