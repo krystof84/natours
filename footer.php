@@ -2,8 +2,8 @@
         <div class="footer__logo-box">
 
             <picture class="footer__logo">
-                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5rem)">
-                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo" src="img/logo-green-2x.png">    
+                <source srcset="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('footer-logo-mobile'))); ?>" media="(max-width: 37.5rem)">
+                <img srcset="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('footer-logo-desktop'))); ?>" alt="Full logo" class="footer__logo" src="<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('footer-logo-desktop'))); ?>">    
             </picture>
         </div>
         <div class="row">
@@ -20,7 +20,9 @@
                 </div>
             </div>
             <div class="col-1-of-2">
-                <p class="footer__copyright">Bulit by <a href="#" class="footer__link">Krzysztof Czajka</a> designed by <a href="#" class="footer__link">Jonas Schmedtmann</a>. Copyright &copy; 2018. </p>
+                <p class="footer__copyright">
+                    <?php echo get_theme_mod('footer-copyright'); ?>
+                </p>
             </div>
         </div>   
     </footer>

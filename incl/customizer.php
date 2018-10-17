@@ -750,7 +750,36 @@ function natours_customize_register( $wp_customize ) {
     ));
 
 
+    // Footer Section
+    $wp_customize->add_section( 'natours_footer_section' , array(
+        'title' => __( 'Footer Section', 'natours' ),
+        'priority' => 115,
+    ));
 
+    // Footer Settings
+    $wp_customize->add_setting('footer-logo-desktop', array());
+    $wp_customize->add_setting('footer-logo-mobile', array());
+    $wp_customize->add_setting('footer-copyright', array());
+
+    // Footer Controls
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_logo_desktop_control', array(
+        'label' => __( 'Footer desktop logo', 'natours' ),
+        'section' => 'natours_footer_section',
+        'settings' => 'footer-logo-desktop',
+        'mime_type' => 'image',
+    )));
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_logo_mobile_control', array(
+        'label' => __( 'Footer mobile logo', 'natours' ),
+        'section' => 'natours_footer_section',
+        'settings' => 'footer-logo-mobile',
+        'mime_type' => 'image',
+    )));
+    $wp_customize->add_control('footer_copyright_control', array(
+        'label'     => __( 'Footer copyright text', 'natours' ),
+        'type'      => 'textarea',
+        'section'   => 'natours_footer_section',
+        'settings'  => 'footer-copyright'
+    ));
 
 
 }
