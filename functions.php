@@ -104,3 +104,17 @@ function natours_footer_menu_classes($classes, $item, $args) {
 }
 add_filter('nav_menu_css_class', 'natours_primary_menu_classes', 1, 3);
 add_filter('nav_menu_css_class', 'natours_footer_menu_classes', 1, 3);
+
+ // Generate form response
+ $nat_response = "";
+ function nat_generate_response($type, $message){
+ 
+    global $nat_response;
+ 
+    if($type == "success") {
+        $nat_response = "<div class='success'>{$message}</div>";
+    } else {
+        $nat_response = "<div class='error'>{$message}</div>";
+    }
+ 
+}

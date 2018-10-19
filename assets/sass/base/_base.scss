@@ -35,3 +35,19 @@ body {
     background-color: $color-primary;
     color: $color-white;
 }
+
+.success {
+    border: 3px solid $color-primary;
+    color: $color-primary;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.error {
+    border: 3px solid red;
+    color: red;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 5px 10px;
+}

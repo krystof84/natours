@@ -749,6 +749,60 @@ function natours_customize_register( $wp_customize ) {
         'settings'  => 'story-2-content'
     ));
 
+    
+    // Form Section
+    $wp_customize->add_section( 'natours_form_section' , array(
+        'title' => __( 'Form Section', 'natours' ),
+        'priority' => 112,
+    ));
+
+    // Form Settings
+    $wp_customize->add_setting('email-recipient', array(
+        'sanitize_callback' => 'sanitize_email'
+    ));
+    $wp_customize->add_setting('email-subject', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+    $wp_customize->add_setting('form-heading', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+    $wp_customize->add_setting('form-button-text', array(
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
+    ));
+    $wp_customize->add_setting('form-image', array());
+
+    // Form Controls
+    $wp_customize->add_control('form_email_recipient_control', array(
+        'label'     => __( 'Email recipient', 'natours' ),
+        'type'      => 'email',
+        'section'   => 'natours_form_section',
+        'settings'  => 'email-recipient'
+    )); 
+    $wp_customize->add_control('form_email_subject_control', array(
+        'label'     => __( 'Subject', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_form_section',
+        'settings'  => 'email-subject'
+    )); 
+    $wp_customize->add_control('form_heading_control', array(
+        'label'     => __( 'Form heading text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_form_section',
+        'settings'  => 'form-heading'
+    ));
+    $wp_customize->add_control('form_button_text_control', array(
+        'label'     => __( 'Form button text', 'natours' ),
+        'type'      => 'text',
+        'section'   => 'natours_form_section',
+        'settings'  => 'form-button-text'
+    )); 
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'form_image_control', array(
+        'label' => __( 'Form background image', 'natours' ),
+        'section' => 'natours_form_section',
+        'settings' => 'form-image',
+        'mime_type' => 'image',
+    )));
+
 
     // Footer Section
     $wp_customize->add_section( 'natours_footer_section' , array(

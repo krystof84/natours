@@ -286,41 +286,47 @@
             <div class="row">
                 <div class="book">
                     <div class="book__form">
-                        <form action="#" class="form">
+                        <form action="<?php echo get_home_url(); ?>/#section-book" class="form" method="post">
                             <div class="u-margin-bottom-medium">
-                                <h2 class="heading-secondary">Start booking now</h2>
+                                <h2 class="heading-secondary">
+                                    <?php echo get_theme_mod('form-heading'); ?>
+                                </h2>
+                                <?php echo $nat_response; ?>
                             </div>
 
                             <div class="form__group">
-                                <input type="text" class="form__input" placeholder="Full Name" id="name" required autocomplete="off">
-                                <label for="name" class="form__label">Full Name</label>
+                                <input type="text" class="form__input" placeholder="<?php _e('Full Name', 'natours'); ?>" id="name" name="fullName" required 
+                                    value="<?php echo esc_attr($_POST['fullName']); ?>">
+                                <label for="name" class="form__label"><?php _e('Full Name', 'natours'); ?></label>
                             </div>
 
                             <div class="form__group">
-                                <input type="email" class="form__input" placeholder="Email address" id="email" required autocomplete="off">
-                                <label for="email" class="form__label">Email address</label>
+                                <input type="email" class="form__input" placeholder="<?php _e('Email address', 'natours'); ?>" id="email" name="email" required
+                                    value="<?php echo esc_attr($_POST['email']); ?>">
+                                <label for="email" class="form__label"><?php _e('Email address', 'natours'); ?></label>
                             </div>
 
                             <div class="form__group u-margin-bottom-medium">
                                 <div class="form__radio-group">
-                                    <input type="radio" class="form__radio-input" id="small" name="size">
+                                    <input type="radio" class="form__radio-input" id="small" name="size" value="<?php _e('Small tour group', 'natours'); ?>" required>
                                     <label for="small" class="form__radio-label">
                                         <span class="form__radio-button"></span>
-                                        Small tour group
+                                        <?php _e('Small tour group', 'natours'); ?>
                                     </label>
                                 </div>
 
                                 <div class="form__radio-group">
-                                    <input type="radio" class="form__radio-input" id="large" name="size">
+                                    <input type="radio" class="form__radio-input" id="large" name="size" value="<?php _e('Large tour group', 'natours'); ?>" required>
                                     <label for="large" class="form__radio-label">
                                         <span class="form__radio-button"></span>
-                                        Large tour group
+                                        <?php _e('Large tour group', 'natours'); ?>
                                     </label>
                                 </div>
                             </div>
 
                             <div class="form__group">
-                                <button class="btn btn--green">Next step &rarr;</button>
+                                <input type="hidden" name="submited" value="1">
+                                <button class="btn btn--green" type="submit"><?php echo get_theme_mod('form-button-text'); ?></button>
                             </div>
                         </form>
                     </div>

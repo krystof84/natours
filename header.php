@@ -54,10 +54,60 @@
         background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('tour-3-image'))); ?>");
     }
 
+    .book {
+        background-image: -webkit-linear-gradient(345deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+        background-image: -o-linear-gradient(345deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+        background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+    }
+
     </style>
     
 </head>
 <body>
+
+    <?php
+    // response messages
+    $missing_content = __('Please fill all form fields.', 'natours');
+    $email_invalid   = __('Email Address Invalid.', 'natours');
+    $message_unsent  = __('Message was not sent. Try Again.', 'natours');
+    $message_sent    = __('Thanks! Your message has been sent.', 'natours');
+    
+    // form fields
+    $fullName = sanitize_text_field($_POST['fullName']);
+    $email = sanitize_email($_POST['email']);
+    $size = $_POST['size'];
+    $message = __('Full name: ', 'natours') . $fullName . "\r\n" . __('Email: ', 'natours') . $email . "\r\n" . 'Group size: ' . $size;
+
+    // mailer settings
+    if(get_theme_mod('email-recipient')) {
+        $to = get_theme_mod('email-recipient');
+    } else {
+        $to = get_option('admin_email');
+    }
+    $subject = get_theme_mod('email-subject');
+    $headers = 'From: ' . $email . "\r\n" . 'Reply-To: ' . $email . "\r\n";
+
+    if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+        if( !empty($fullName) && !empty($email) && !empty($size) ) {
+
+            if( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+                nat_generate_response('error', $email_invalid);    
+            } else {
+                $sent = wp_mail($to, $subject, $message, $headers);
+    
+                if($sent) {
+                    nat_generate_response('success', $message_sent);
+                } else {
+                    nat_generate_response('error', $message_unsent);
+                }
+            }
+    
+        } else {
+            nat_generate_response('error', $missing_content);
+        }
+    }
+
+    ?>
 
     <div class="navigation">
         <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
