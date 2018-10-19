@@ -13,24 +13,19 @@ function natours_customize_register( $wp_customize ) {
         'default' => get_template_directory_uri() . '/assest/img/hero-small.jpg',
         'transport'     => 'refresh',
     ));
-
     $wp_customize->add_setting('header-image-retina', array(
         'default' => get_template_directory_uri() . '/assest/img/hero.jpg',
         'transport'     => 'refresh',
     ));
-
     $wp_customize->add_setting('header-text-big', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
     ));
-
     $wp_customize->add_setting('header-text-small', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
     ));
-
     $wp_customize->add_setting('header-button-text', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
     ));
-
     $wp_customize->add_setting('header-button-url', array(
         'sanitize_callback' => 'esc_url_raw' 
     ));
@@ -42,35 +37,30 @@ function natours_customize_register( $wp_customize ) {
         'settings' => 'header-image',
         'mime_type' => 'image',
     ) ) );
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'image_control_retina', array(
         'label' => __( 'Header image retina', 'natours' ),
         'section' => 'natours_header_section',
         'settings' => 'header-image-retina',
         'mime_type' => 'image',
     ) ) );
-
     $wp_customize->add_control('header_control_text_big', array(
         'label'     => __( 'Header text big', 'natours' ),
         'type'      => 'text',
         'section'   => 'natours_header_section',
         'settings'  => 'header-text-big'
     ));
-
     $wp_customize->add_control('header_control_text_small', array(
         'label'     => __( 'Header text small', 'natours' ),
         'type'      => 'text',
         'section'   => 'natours_header_section',
         'settings'  => 'header-text-small'
     ));
-
     $wp_customize->add_control('header_control_button_text', array(
         'label'     => __( 'Button text', 'natours' ),
         'type'      => 'text',
         'section'   => 'natours_header_section',
         'settings'  => 'header-button-text'
     ));
-
     $wp_customize->add_control('header_control_button_url', array(
         'label'     => __( 'Button url', 'natours' ),
         'type'      => 'url',
@@ -97,13 +87,10 @@ function natours_customize_register( $wp_customize ) {
         'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_setting('about-button-hide', array());
-
     $wp_customize->add_setting('about-image-1', array());
     $wp_customize->add_setting('about-image-1-retina', array());
-
     $wp_customize->add_setting('about-image-2', array());
     $wp_customize->add_setting('about-image-2-retina', array());
-
     $wp_customize->add_setting('about-image-3', array());
     $wp_customize->add_setting('about-image-3-retina', array());
 
@@ -114,70 +101,60 @@ function natours_customize_register( $wp_customize ) {
         'section'   => 'natours_about_section',
         'settings'  => 'about-heading-text'
     ));
-
     $wp_customize->add_control('about_control_content_text', array(
         'label'     => __( 'Text content', 'natours' ),
         'type'      => 'textarea',
         'section'   => 'natours_about_section',
         'settings'  => 'about-content-text'
     ));
-
     $wp_customize->add_control('about_control_button_text', array(
         'label'     => __( 'Button text', 'natours' ),
         'type'      => 'text',
         'section'   => 'natours_about_section',
         'settings'  => 'about-button-text'
     ));
-
     $wp_customize->add_control('about_control_button_url', array(
         'label'     => __( 'Button url', 'natours' ),
         'type'      => 'url',
         'section'   => 'natours_about_section',
         'settings'  => 'about-button-url'
     ));
-
     $wp_customize->add_control( 'about_control_hide_button', array(
         'label'      => 'Hide Button',
         'type'       => 'checkbox',
         'section'    => 'natours_about_section',
         'settings'   => 'about-button-hide'
     ));
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'about_control_image_1', array(
         'label' => __( 'Picture 1', 'natours' ),
         'section' => 'natours_about_section',
         'settings' => 'about-image-1',
         'mime_type' => 'image',
     ) ) );
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'about_control_image_1_retina', array(
         'label' => __( 'Picture 1 retina', 'natours' ),
         'section' => 'natours_about_section',
         'settings' => 'about-image-1-retina',
         'mime_type' => 'image',
     ) ) );
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'about_control_image_2', array(
         'label' => __( 'Picture 2', 'natours' ),
         'section' => 'natours_about_section',
         'settings' => 'about-image-2',
         'mime_type' => 'image',
     ) ) );
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'about_control_image_2_retina', array(
         'label' => __( 'Picture 2 retina', 'natours' ),
         'section' => 'natours_about_section',
         'settings' => 'about-image-2-retina',
         'mime_type' => 'image',
     ) ) );
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'about_control_image_3', array(
         'label' => __( 'Picture 3', 'natours' ),
         'section' => 'natours_about_section',
         'settings' => 'about-image-3',
         'mime_type' => 'image',
     ) ) );
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'about_control_image_3_retina', array(
         'label' => __( 'Picture 3 retina', 'natours' ),
         'section' => 'natours_about_section',
@@ -193,7 +170,6 @@ function natours_customize_register( $wp_customize ) {
 
     // Features settings
     $wp_customize->add_setting('features-image-1', array());
-
     $wp_customize->add_setting('features-icon-1', array());
     $wp_customize->add_setting('features-title-1', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -201,7 +177,6 @@ function natours_customize_register( $wp_customize ) {
     $wp_customize->add_setting('features-content-1', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
     ));
-
     $wp_customize->add_setting('features-icon-2', array());
     $wp_customize->add_setting('features-title-2', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -209,7 +184,6 @@ function natours_customize_register( $wp_customize ) {
     $wp_customize->add_setting('features-content-2', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
     ));
-
     $wp_customize->add_setting('features-icon-3', array());
     $wp_customize->add_setting('features-title-3', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -217,7 +191,6 @@ function natours_customize_register( $wp_customize ) {
     $wp_customize->add_setting('features-content-3', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
     ));
-
     $wp_customize->add_setting('features-icon-4', array());
     $wp_customize->add_setting('features-title-4', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses'
@@ -234,7 +207,6 @@ function natours_customize_register( $wp_customize ) {
         'settings' => 'features-image-1',
         'mime_type' => 'image',
     ) ) );
-
     $wp_customize->add_control('feature_panel_1_icon', array(
         'label'     => __( 'Panel 1 icon', 'natours' ),
         'type'      => 'text',
@@ -253,7 +225,6 @@ function natours_customize_register( $wp_customize ) {
         'section'   => 'natours_features_section',
         'settings'  => 'features-content-1'
     ));
-
     $wp_customize->add_control('feature_panel_2_icon', array(
         'label'     => __( 'Panel 2 icon', 'natours' ),
         'type'      => 'text',
@@ -272,7 +243,6 @@ function natours_customize_register( $wp_customize ) {
         'section'   => 'natours_features_section',
         'settings'  => 'features-content-2'
     ));
-
     $wp_customize->add_control('feature_panel_3_icon', array(
         'label'     => __( 'Panel 3 icon', 'natours' ),
         'type'      => 'text',
@@ -291,7 +261,6 @@ function natours_customize_register( $wp_customize ) {
         'section'   => 'natours_features_section',
         'settings'  => 'features-content-3'
     ));
-
     $wp_customize->add_control('feature_panel_4_icon', array(
         'label'     => __( 'Panel 4 icon', 'natours' ),
         'type'      => 'text',
@@ -350,8 +319,6 @@ function natours_customize_register( $wp_customize ) {
     $wp_customize->add_setting('mptours-button-url', array(
         'sanitize_callback' => 'esc_url_raw' 
     ));
-
-
     $wp_customize->add_setting('tour-1-image', array());
     $wp_customize->add_setting('tour-1-name', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses' 
@@ -377,8 +344,6 @@ function natours_customize_register( $wp_customize ) {
     $wp_customize->add_setting('tour-1-popup-button-url', array(
         'sanitize_callback' => 'esc_url_raw' 
     ));
-
-
     $wp_customize->add_setting('tour-2-image', array());
     $wp_customize->add_setting('tour-2-name', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses' 
@@ -404,8 +369,6 @@ function natours_customize_register( $wp_customize ) {
     $wp_customize->add_setting('tour-2-popup-button-url', array(
         'sanitize_callback' => 'esc_url_raw' 
     ));
-
-
     $wp_customize->add_setting('tour-3-image', array());
     $wp_customize->add_setting('tour-3-name', array(
         'sanitize_callback' => 'wp_filter_nohtml_kses' 
@@ -458,8 +421,6 @@ function natours_customize_register( $wp_customize ) {
         'section'   => 'natours_mp_tours_section_1',
         'settings'  => 'mptours-button-url'
     ));
-
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'tour_1_image_control', array(
         'label' => __( 'Tour 1 image', 'natours' ),
         'section' => 'natours_mp_tours_section_2',
@@ -526,8 +487,6 @@ function natours_customize_register( $wp_customize ) {
         'section'   => 'natours_mp_tours_section_2',
         'settings'  => 'tour-1-popup-button-url'
     ));
-
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'tour_2_image_control', array(
         'label' => __( 'Tour 2 image', 'natours' ),
         'section' => 'natours_mp_tours_section_3',
@@ -594,8 +553,6 @@ function natours_customize_register( $wp_customize ) {
         'section'   => 'natours_mp_tours_section_3',
         'settings'  => 'tour-2-popup-button-url'
     ));
-
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'tour_3_image_control', array(
         'label' => __( 'Tour 3 image', 'natours' ),
         'section' => 'natours_mp_tours_section_4',
@@ -691,21 +648,18 @@ function natours_customize_register( $wp_customize ) {
     ));
 
     // Stories controls
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'story_video_1_control', array(
         'label' => __( 'Background Video (mp4 format)', 'natours' ),
         'section' => 'natours_stories_section',
         'settings' => 'story-video-1',
         'mime_type' => 'video',
     )));
-
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'story_video_2_control', array(
         'label' => __( 'Background Video (webm format)', 'natours' ),
         'section' => 'natours_stories_section',
         'settings' => 'story-video-2',
         'mime_type' => 'video',
     )));
-
     $wp_customize->add_control('story_heading_control', array(
         'label'     => __( 'Stories section heading text', 'natours' ),
         'type'      => 'text',
@@ -834,7 +788,6 @@ function natours_customize_register( $wp_customize ) {
         'section'   => 'natours_footer_section',
         'settings'  => 'footer-copyright'
     ));
-
 
 }
 add_action( 'customize_register', 'natours_customize_register' );

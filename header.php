@@ -60,6 +60,23 @@
         background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
     }
 
+    @media only screen and (max-width: 56.25em) {
+        .book {
+            background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), color-stop(65%, rgba(255, 255, 255, 0.9))), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+            background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+            background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+        }
+    }
+
+    @media only screen and (max-width: 75em) {
+        .book {
+            background-image: -webkit-linear-gradient(345deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+            background-image: -o-linear-gradient(345deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+            background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url("<?php echo natours_sanitize_image(wp_get_attachment_url(get_theme_mod('form-image'))); ?>");
+        }
+    }
+
     </style>
     
 </head>
